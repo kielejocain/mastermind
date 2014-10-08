@@ -57,4 +57,3 @@ Of course, only **bolded** information is spoken aloud.
 - In-game instructions
 - Moving Paintboard (always on top of next guess)
 - Mobile version (can't drag with a touch interface; jQuery Mobile dealt with this issue long ago)
-I have used this simple game as a vessel to learn [http://jqueryui.com/'](jQuery UI) and [http://jquerymobile.com'](jQuery Mobile).
