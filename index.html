@@ -1,0 +1,197 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Just Mastermind</title>
+
+<meta name="keywords" content="Mastermind">
+
+<link href="css/mastermind.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+
+<script type="text/javascript" src="js/jquery-ui-1.8.13.custom.min.js"></script>
+
+<script type="text/javascript" src="js/mastermind.js"></script>
+
+<script type="text/javascript">
+        var solution = [1,1,1,1];
+        var when = 0;
+        var what = [0,0,0,0];
+        var count = [0,0,0,0,0,0];
+        var color = ["#FFFFFF","#FF0000","#FF8000","#FFFF00","#00FF00","#0000FF","#800080"]
+        var rgb = "";
+</script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<div id="main">
+
+<div id="logow">
+<div id="logoww">
+<div id="logo">
+<img src="logo.png" />
+</div>  <!--logo-->
+</div>  <!--logoww-->
+<div id="end"></div>
+<div id="solu0" class="solu"></div>
+<div id="solu1" class="solu"></div>
+<div id="solu2" class="solu"></div>
+<div id="solu3" class="solu"></div>
+</div><!--logow-->
+
+<div id="dragw">
+<div id="drag1" class="drag"></div>
+<div id="drag2" class="drag"></div>
+<div id="drag3" class="drag"></div>
+<div id="drag4" class="drag"></div>
+<div id="drag5" class="drag"></div>
+<div id="drag6" class="drag"></div>
+</div>  <!--dragw-->
+
+<div id="sub9" class="submit" onclick="guess(9)"></div>
+<div id="res9" class="response">
+<div id="res90" class="x0 y1"></div>
+<div id="res91" class="x1 y1"></div>
+<div id="res92" class="x0 y0"></div>
+<div id="res93" class="x1 y0"></div>
+</div> <!--res9-->
+<div id="90" class="slot1" onclick="select(9,0)"></div>
+<div id="91" class="slot2" onclick="select(9,1)"></div>
+<div id="92" class="slot3" onclick="select(9,2)"></div>
+<div id="93" class="slot4" onclick="select(9,3)"></div>
+
+<div id="sub8" class="submit" onclick="guess(8)"></div>
+<div id="res8" class="response">
+<div id="res80" class="x0 y1"></div>
+<div id="res81" class="x1 y1"></div>
+<div id="res82" class="x0 y0"></div>
+<div id="res83" class="x1 y0"></div>
+</div> <!--res8-->
+<div id="80" class="slot1" onclick="select(8,0)"></div>
+<div id="81" class="slot2" onclick="select(8,1)"></div>
+<div id="82" class="slot3" onclick="select(8,2)"></div>
+<div id="83" class="slot4" onclick="select(8,3)"></div>
+
+<div id="sub7" class="submit" onclick="guess(7)"></div>
+<div id="res7" class="response">
+<div id="res70" class="x0 y1"></div>
+<div id="res71" class="x1 y1"></div>
+<div id="res72" class="x0 y0"></div>
+<div id="res73" class="x1 y0"></div>
+</div> <!--res7-->
+<div id="70" class="slot1" onclick="select(7,0)"></div>
+<div id="71" class="slot2" onclick="select(7,1)"></div>
+<div id="72" class="slot3" onclick="select(7,2)"></div>
+<div id="73" class="slot4" onclick="select(7,3)"></div>
+
+<div id="sub6" class="submit" onclick="guess(6)"></div>
+<div id="res6" class="response">
+<div id="res60" class="x0 y1"></div>
+<div id="res61" class="x1 y1"></div>
+<div id="res62" class="x0 y0"></div>
+<div id="res63" class="x1 y0"></div>
+</div> <!--res6-->
+<div id="60" class="slot1" onclick="select(6,0)"></div>
+<div id="61" class="slot2" onclick="select(6,1)"></div>
+<div id="62" class="slot3" onclick="select(6,2)"></div>
+<div id="63" class="slot4" onclick="select(6,3)"></div>
+
+<div id="sub5" class="submit" onclick="guess(5)"></div>
+<div id="res5" class="response">
+<div id="res50" class="x0 y1"></div>
+<div id="res51" class="x1 y1"></div>
+<div id="res52" class="x0 y0"></div>
+<div id="res53" class="x1 y0"></div>
+</div> <!--res5-->
+<div id="50" class="slot1" onclick="select(5,0)"></div>
+<div id="51" class="slot2" onclick="select(5,1)"></div>
+<div id="52" class="slot3" onclick="select(5,2)"></div>
+<div id="53" class="slot4" onclick="select(5,3)"></div>
+
+<div id="sub4" class="submit" onclick="guess(4)"></div>
+<div id="res4" class="response">
+<div id="res40" class="x0 y1"></div>
+<div id="res41" class="x1 y1"></div>
+<div id="res42" class="x0 y0"></div>
+<div id="res43" class="x1 y0"></div>
+</div> <!--res4-->
+<div id="40" class="slot1" onclick="select(4,0)"></div>
+<div id="41" class="slot2" onclick="select(4,1)"></div>
+<div id="42" class="slot3" onclick="select(4,2)"></div>
+<div id="43" class="slot4" onclick="select(4,3)"></div>
+
+<div id="sub3" class="submit" onclick="guess(3)"></div>
+<div id="res3" class="response">
+<div id="res30" class="x0 y1"></div>
+<div id="res31" class="x1 y1"></div>
+<div id="res32" class="x0 y0"></div>
+<div id="res33" class="x1 y0"></div>
+</div> <!--res3-->
+<div id="30" class="slot1" onclick="select(3,0)"></div>
+<div id="31" class="slot2" onclick="select(3,1)"></div>
+<div id="32" class="slot3" onclick="select(3,2)"></div>
+<div id="33" class="slot4" onclick="select(3,3)"></div>
+
+<div id="sub2" class="submit" onclick="guess(2)"></div>
+<div id="res2" class="response">
+<div id="res20" class="x0 y1"></div>
+<div id="res21" class="x1 y1"></div>
+<div id="res22" class="x0 y0"></div>
+<div id="res23" class="x1 y0"></div>
+</div> <!--res2-->
+<div id="20" class="slot1" onclick="select(2,0)"></div>
+<div id="21" class="slot2" onclick="select(2,1)"></div>
+<div id="22" class="slot3" onclick="select(2,2)"></div>
+<div id="23" class="slot4" onclick="select(2,3)"></div>
+
+<div id="sub1" class="submit" onclick="guess(1)"></div>
+<div id="res1" class="response">
+<div id="res10" class="x0 y1"></div>
+<div id="res11" class="x1 y1"></div>
+<div id="res12" class="x0 y0"></div>
+<div id="res13" class="x1 y0"></div>
+</div> <!--res1-->
+<div id="10" class="slot1" onclick="select(1,0)"></div>
+<div id="11" class="slot2" onclick="select(1,1)"></div>
+<div id="12" class="slot3" onclick="select(1,2)"></div>
+<div id="13" class="slot4" onclick="select(1,3)"></div>
+
+<div id="sub0" class="submit" onclick="guess(0)"></div>
+<div id="res0" class="response">
+<div id="res00" class="x0 y1"></div>
+<div id="res01" class="x1 y1"></div>
+<div id="res02" class="x0 y0"></div>
+<div id="res03" class="x1 y0"></div>
+</div> <!--res0-->
+<div id="00" class="slot1" onclick="select(0,0)"></div>
+<div id="01" class="slot2" onclick="select(0,1)"></div>
+<div id="02" class="slot3" onclick="select(0,2)"></div>
+<div id="03" class="slot4" onclick="select(0,3)"></div>
+
+</div> <!--main-->
+
+</div> <!--wrapper-->
+
+<script type="text/javascript">
+        $(document).ready(function() {
+                startup();
+        });
+</script>
+
+</body>
+
+</html> 
